@@ -1,0 +1,25 @@
+﻿id,source,query_or_tag,filters,records_returned,new_unique_papers,status
+C1,Consensus,design and synthesis of imidazole derivatives with biological activity molecular docking in silico (recon),none,20,20,Success
+C2,Consensus,synthesis of imidazole derivatives multicomponent reaction green chemistry hybrid pharmacophore design (Sub-area A),none,20,17,Success
+C3,Consensus,imidazole derivatives anticancer kinase inhibitors EGFR VEGFR tubulin structure-activity relationship (Sub-area B),none,20,19,Success
+C4,Consensus,imidazole derivatives antibacterial antifungal activity CYP51 lanosterol demethylase docking antimicrobial resistance (Sub-area C),none,20,20,Success
+C5,Consensus,imidazole derivatives antidiabetic antiviral antioxidant anti-inflammatory neuroprotective activity in silico docking ADMET (Sub-area D),none,20,17,Success
+C6,Consensus,reliability and limitations of molecular docking scoring functions validation of virtual screening ADMET prediction accuracy (Sub-area E),none,20,20,Success
+C7,Consensus,"systematic review imidazole scaffold drug design synthetic methodologies and structure-activity relationships (Review search, sub-area A)",none,20,17,Success
+C8,Consensus,"systematic review meta-analysis imidazole benzimidazole anticancer agents mechanisms clinical candidates (Review search, sub-area B)",none,20,19,Success
+C9,Consensus,"systematic review imidazole antimicrobial antifungal antibacterial agents resistance mechanisms azole (Review search, sub-area C)",none,20,20,Success
+C10,Consensus,"review imidazole derivatives antidiabetic antiviral anti-inflammatory antitubercular Alzheimer therapeutic potential (Review search, sub-area D)",none,20,14,Success
+C11,Consensus,"review molecular dynamics simulation MM-GBSA DFT ADMET prediction in silico drug design limitations experimental validation (Review search, sub-area E)",none,20,20,Success
+C12,Consensus,"synthesis of substituted imidazoles one-pot condensation Debus-Radziszewski catalyst biological activity (Era-gated A, old)",year_max: 2015,20,20,Success
+C13,Consensus,"synthesis of substituted imidazoles one-pot condensation Debus-Radziszewski catalyst biological activity (Era-gated A, new)",year_min: 2021,20,17,Success
+C14,Consensus,"imidazole derivatives molecular docking synthesis biological evaluation anticancer antimicrobial design (Era-gated B/E, old)",year_max: 2015,19,17,Success (19 of 20 cap)
+C15,Consensus,"imidazole derivatives molecular docking synthesis biological evaluation anticancer antimicrobial design (Era-gated B/E, new)",year_min: 2021,20,15,Success
+C16,Consensus,"imidazole-based compounds clinical drugs medicinal chemistry developments anticancer antifungal antibacterial antitubercular (Follow-up on Zhang 2014, 696 cites)",year_min: 2015,20,8,Success (12 of 20 already seen; low novelty)
+C17,Consensus,"glucosamine-6-phosphate synthase molecular docking imidazole antibacterial derivatives binding energy (Follow-up on Vijesh 2013, 155 cites)",year_min: 2014,20,20,Success
+C18,Consensus,"MM/GBSA binding free energy accuracy correlation with experimental affinity docking rescoring benchmark limitations (Follow-up on Wang 2019 Chem Rev, 2013 cites)",year_min: 2020,20,18,Success
+C19,Consensus,accuracy and validation of in silico ADMET prediction tools SwissADME pkCSM drug-likeness Lipinski rule limitations (Spare 1: ADMET reliability),none,20,19,Success
+C20,Consensus,imidazole heme coordination human cytochrome P450 inhibition selectivity hepatotoxicity drug-drug interactions azole antifungal (Spare 2: CYP liability),none,20,20,Success
+C21,Consensus,QSAR machine learning generative design imidazole benzimidazole derivatives bioactivity prediction virtual screening (Spare 3: QSAR/ML design),year_min: 2021,20,20,Success
+A1,alphaXiv,"Discovery query: imidazole, benzimidazole design and synthesis with docking, ADMET and DFT",,,,"Success (3 queries returned 42 records, 41 unique; 7 read in full text)"
+A2,alphaXiv,"Discovery query: reliability of molecular docking, binding-affinity prediction and ADMET prediction in small-molecule drug design",,,,"Success (3 queries returned 42 records, 41 unique; 7 read in full text)"
+A3,alphaXiv,"Discovery query: imidazole or benzimidazole compounds as antifungal, antibacterial, anticancer or kinase-inhibitor candidates (computational or experimental preprints)",,,,"Success (3 queries returned 42 records, 41 unique; 7 read in full text)"
