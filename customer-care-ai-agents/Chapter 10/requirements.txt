@@ -1,0 +1,10 @@
+# LlamaIndex 0.14 line. llama-index-llms-anthropic 0.12.x builds messages with
+# anthropic.types.MessageParam, which became a Union in anthropic 2.0 and can no
+# longer be instantiated, so every chat call fails on anthropic>=2. Pin below 2
+# until the wrapper is updated.
+llama-index-core>=0.14.5,<0.15
+llama-index-llms-anthropic>=0.12.0
+anthropic>=1.17,<2
+llama-index-embeddings-openai>=0.6.0
+llama-index-retrievers-bm25>=0.7.0
+python-dotenv>=1.0.0

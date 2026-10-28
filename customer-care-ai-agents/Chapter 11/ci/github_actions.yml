@@ -1,0 +1,106 @@
+# Chapter 11 (customer-care edition) - Complaint-Resolution Evaluation Harness CI
+#
+# After installation, emits complaint-eval-required on every PR. Evaluation runs
+# for Chapter 11/workflow changes. Configure the final gate as required.
+
+name: complaint-eval
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      relevant: ${{ steps.scope.outputs.relevant }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: scope
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          python "customer-care-ai-agents/Chapter 11/ci/change_scope.py"
+
+  scorecard:
+    needs: changes
+    if: needs.changes.outputs.relevant == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: customer-care-ai-agents/Chapter 11
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: customer-care-ai-agents/Chapter 11/pyproject.toml
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Run evaluation harness
+        env:
+          CC_AGENT_VERSION: ${{ github.sha }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python -m src.eval_harness.run \
+            --segment all \
+            --output scorecard.json \
+            --markdown scorecard.md \
+            --executor "github-actions:${{ github.run_id }}"
+
+      - name: Upload scorecard artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: complaint-scorecard
+          path: |
+            customer-care-ai-agents/Chapter 11/scorecard.json
+            customer-care-ai-agents/Chapter 11/scorecard.md
+
+      - name: Generate model risk report
+        if: always()
+        run: |
+          python -m src.reporting.model_risk_report scorecard.json \
+            --out model_risk_report.md
+
+      - name: Upload model risk report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-governance-report
+          path: customer-care-ai-agents/Chapter 11/model_risk_report.md
+
+  required:
+    name: complaint-eval-required
+    needs: [changes, scorecard]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check evaluation outcome
+        env:
+          CHANGES_RESULT: ${{ needs.changes.result }}
+          RELEVANT: ${{ needs.changes.outputs.relevant }}
+          SCORECARD_RESULT: ${{ needs.scorecard.result }}
+        run: |
+          test "$CHANGES_RESULT" = success
+          if [ "$RELEVANT" = true ]; then
+            test "$SCORECARD_RESULT" = success
+          else
+            test "$RELEVANT" = false
+            test "$SCORECARD_RESULT" = skipped
+          fi
