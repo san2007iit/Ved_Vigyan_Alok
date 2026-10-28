@@ -1,0 +1,40 @@
+{
+  "claim": {
+    "name": "Ananya Iyer",
+    "customer_id": "C1003",
+    "plan_number": "CARE-2024-AQP-55102",
+    "date_of_failure": "2026-10-22",
+    "description": "AquaPure RO water purifier stopped dispensing water and is leaking from the base. Red E2 error light is on. The unit has not been moved since installation."
+  },
+  "submitted_documents": [
+    {
+      "type": "claim_form",
+      "fields": {
+        "customer": "Ananya Iyer",
+        "date": "2026-10-22",
+        "time": "07:40",
+        "location": "Flat 3B, 14 Gandhi Nagar 2nd Main Road, Adyar, Chennai 600020",
+        "product": "AquaPure RO Purifier AQP-500",
+        "serial_number": "AQP5-24-118842",
+        "invoice": "ORD-71999 dated 2024-11-20, Rs 18,500",
+        "description": "Purifier not dispensing water, leaking from the base",
+        "contact_preference": "Chat, Tamil or English"
+      }
+    },
+    {
+      "type": "photo",
+      "filename": "purifier_front.jpg",
+      "description": "Water pooled under the unit. Red E2 error light lit on the front panel. Outer casing intact, no cracks or impact marks."
+    },
+    {
+      "type": "photo",
+      "filename": "purifier_base_closeup.jpg",
+      "description": "Close-up of the base: drip from the inlet solenoid valve connector. Warranty seal on the service panel intact."
+    },
+    {
+      "type": "technician_report",
+      "job_sheet": "JS-2026-10-23-0912",
+      "summary": "Job sheet JS-2026-10-23-0912. Visit on 23 Oct 2026. Diagnosis: RO booster pump failed (no pressure); inlet solenoid valve leaking. No signs of impact, warranty seal intact, installed in a residence. Serial number matches the invoice. Recommended: replace pump and valve."
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# Chapter 5 deep search agent (customer-care edition)
+pydantic-ai-slim[openai]>=2.31
+pydantic>=2.7
+python-dotenv>=1.0
+tavily-python>=0.5   # optional: only used when TAVILY_API_KEY is set

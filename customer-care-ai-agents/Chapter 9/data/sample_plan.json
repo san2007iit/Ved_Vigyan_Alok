@@ -1,0 +1,40 @@
+{
+  "plan_number": "CARE-2024-AQP-55102",
+  "customer": {
+    "customer_id": "C1003",
+    "name": "Ananya Iyer",
+    "tier": "Silver",
+    "address": "Flat 3B, 14 Gandhi Nagar 2nd Main Road, Adyar, Chennai 600020",
+    "phone": "+91-9XXXXXXXX1"
+  },
+  "product": {
+    "name": "AquaPure RO Purifier",
+    "sku": "AQP-500",
+    "category": "kitchen",
+    "serial_number": "AQP5-24-118842",
+    "invoice": "ORD-71999",
+    "purchase_date": "2024-11-20",
+    "invoice_value_inr": 18500
+  },
+  "coverage": {
+    "name": "NovaMart Care+ extended warranty (parts and labour)",
+    "plan_purchased_on": "2024-11-20",
+    "inception_date": "2025-11-25",
+    "expiration_date": "2027-11-25",
+    "coverage_limit": 18500,
+    "service_fee": 199,
+    "sections": {
+      "parts": "Replacement of failed functional parts (pump, valves, membrane, control board).",
+      "labour": "Technician visit and fitting, within the city service area.",
+      "replacement": "Like-for-like replacement when the repair estimate is 70% or more of the invoice value.",
+      "consumables": "NOT covered: filters, cartridges and membranes past their rated life."
+    },
+    "exclusions": [
+      "physical damage",
+      "unauthorised repair",
+      "commercial use",
+      "tampered seal"
+    ]
+  },
+  "claims_history": []
+}
